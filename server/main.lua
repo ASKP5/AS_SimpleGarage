@@ -184,3 +184,15 @@ UpdateGarage = function(vehicleProps, newGarage)
 		end
 	end)
 end
+
+if Config.StoreOnServerStart then
+	AddEventHandler('onMySQLReady', function()
+		local impounded = true
+		if impounded then 
+			TriggerEvent('AS_SimpleGarage:checkImpounded')
+			--TriggerServerEvent('AS_SimpleGarage:checkImpounded') IF THIS BREAKS IT REVERT TO THIS.
+		elseif not impounded then
+		MySQL.Async.execute("UPDATE owned_vehicles SET `stored`=1 WHERE `stored`=0", {})
+		end
+	end)
+end
