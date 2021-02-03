@@ -1,5 +1,4 @@
 Config = {}
-Config.Locale = 'en'
 Config.DrawDistance = 50
 
 Config.LockKey = 303 -- Key used for locking/unlock vehicles, 303 is U
@@ -9,7 +8,7 @@ Config.ColorR 			= 7 -- Color for menu
 Config.ColorG           = 77 -- Color for menu
 Config.ColorB           = 217 -- Color for menu
 Config.Type 			= 6 -- Circletype
-
+Config.StoreOnServerStart = true -- Store all vehicles in garage on server start?
 
 Config.Garages = {
     ["A"] = {
@@ -110,8 +109,8 @@ Config.Garages = {
 }
 
 Config.Labels = {
-    ["menu"] = "Druk ~INPUT_CONTEXT~ om garage %s te bekijken",
-    ["vehicle"] = "Druk ~INPUT_CONTEXT~ om '%s' terug in de garage te zetten"
+    ["menu"] = "Press ~INPUT_CONTEXT~ to view garage",
+    ["vehicle"] = "Press ~INPUT_CONTEXT~ to put vehicle back in the garage"
 }
 
 Config.Trim = function(value)
@@ -126,6 +125,6 @@ Config.AllowedImpoundJob = 'police', 'mechanic' -- Select what job can impound v
 
 Config.Impound = {
 	RetrieveLocation = { x = 409.6, y = -1623.4, z = 28.30 },
-	StoreLocation = { x = 377.67, y = -1613.66, z = 28.30 },
+	StoreLocation = { x = 534.94, y = -26.06, z = 70.63 },
 	SpawnLocation = vector3(402.49, -1634.40, 28.86)
 }
